@@ -32,3 +32,25 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+$('document').ready(function(){
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://numbersapi.p.rapidapi.com/random/math?fragment=true&json=true",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "e7587c4907mshc1a117d6806a06dp14b038jsn25a4c5e15725",
+            "x-rapidapi-host": "numbersapi.p.rapidapi.com"
+        }
+    };
+
+    $.ajax(settings).done(function (response) {
+        $('#random-fact').text(response.number+": "+response.text);
+        console.log(response.text);
+    });
+
+    $.getJSON("https://api.countapi.xyz/hit/julia-kohl.de/visits", function(response) {
+    $("#visits").text(response.value);
+    });
+});

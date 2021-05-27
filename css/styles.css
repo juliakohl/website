@@ -57,6 +57,10 @@ header {
   display: none;
 }
 
+#random-fact {
+  font-weight: 400;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
